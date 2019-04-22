@@ -1,0 +1,59 @@
+--> Core Java Design Patterns
+
+	- Creational Design Pattern
+		- Factory Pattern
+    	- Abstract Factory Pattern
+    	- Singleton Pattern
+    	- Prototype Pattern
+    	- Builder Pattern
+    
+    - Structural Design Pattern	    	
+   		- Adapter Pattern
+    	- Bridge Pattern
+    	- Composite Pattern
+    	- Decorator Pattern
+    	- Facade Pattern
+    	- Flyweight Pattern
+    	- Proxy Pattern
+    
+    - Behavioral Design Pattern
+    	- Chain Of Responsibility Pattern
+		- Command Pattern
+		- Interpreter Pattern
+		- Iterator Pattern
+		- Mediator Pattern
+		- Memento Pattern
+		- Observer Pattern
+		- State Pattern
+		- Strategy Pattern
+		- Template Pattern
+		- Visitor Pattern
+	
+
+	
+-->composition VS inheritance 
+
+	- inheritance is loosly coupled.
+	- composition is tightly coupled.
+	- inheritance is subclass-superclass relationship.
+	- composition is not required to extend superclass, just create object of perticular class in side class.
+	- inheritance is IS-A relationship.
+	- compostion is HAS-A relationship.
+
+	reference :- https://stackoverflow.com/questions/49002/prefer-composition-over-inheritance
+
+-->Strategy pattern (Behavioral Design Pattern)
+	
+	- In general, think of the Strategy Pattern as a flexible alternative to
+	  subclassing; if you use inheritance to define the behavior of a class,
+	  then you’re stuck with that behavior even if you need to change it.
+	  With Strategy you can change the behavior by composing with a
+	  different object.
+
+-->State pattern (Behavioral Design Pattern)
+	
+	- Think of the State Pattern as an alternative to putting lots of
+	  conditionals in your context; by encapsulating the behaviors within
+	  state objects, you can simply change the state object in context to
+	  change its behavior.
+

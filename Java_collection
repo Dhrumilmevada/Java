@@ -1,0 +1,16 @@
+reference by :- https://beginnersbook.com/java-collections-tutorials/
+
+
+initlization of Arraylist :-
+
+	1) Initialization using Arrays.asList
+	2) Anonymous inner class method to initialize ArrayList
+	3) Normal way of ArrayList initialization
+	4) Use Collections.ncopies
+
+loop arraylist in java :-
+
+    1) For Loop
+    2) Advanced for loop
+    3) While Loop
+    4) Iterator
