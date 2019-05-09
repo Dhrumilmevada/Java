@@ -1,0 +1,77 @@
+					Concurrency and multithreading in java by Jose Paumard
+					------------------------------------------------------
+--> The Singleton Pattern
+
+	public class Singleton{
+		private static Singleton instance;
+		
+		private Singleton(){}
+
+		public static Singleton getInstance(){
+			if(innstance==null)
+			{
+				instance = new Singleton();
+			}
+			return instance;
+		}
+	}
+	
+	->Suppose two thread are come into IF block at same time, and after that schedulor stop one of the thread
+		so that one thread create an object of Singleton. When other thread become active that time it wiil also 
+		create an object of Singleton class.that it is race condition.
+	->It might rise to race condition, to prevent that we have to change above code as below one
+
+	public class Singleton{
+		private static Singleton instance;
+
+		private Singleton(){}
+
+		public static synchronized Singleton getInstance(){
+			if(innstance==null)
+			{
+				instance = new Singleton();
+			}
+			return instance;
+		}
+	}
+
+--> Re-entrant lock
+	->when thread is holding a key and to enter another block of code required key which is hold by itself, but it will allowed 
+		to enter that another block of code. It is called as Re-eterant lock.
+
+-->Deadlock 
+	->A deadlock is situation where a thread T1 hold a key needed by a thread T2, and Thread T2 hold a key needed by thrad T1. 	 
+
+-->Interrupt() method
+	->We can not use interrupt() and isInterrupted() method for that instadof stop() method.
+
+-->Wait() and notify()
+	->They define in a Object class and will called  when they contain key of that object, should be called from synchronized block or synchronized method.
+	->While using wait() and notify() method we have to provide single and same  lock to those method.
+
+-->Thread state:-
+	->To get thread state we have to use getState() method ans it will return of type Thread.State .
+
+--> "Happen Before" link :-
+	->All synchronize methos or block and volatile varible are implicitly added by Happen Before link.
+	->This link is about atomacity in write and read operation.
+	->This link check for last update or madofication in that synchronize method or block and volatile variable.
+	->This link is made by providing synchronize or volatile read and synchronize or volatile write.
+
+-->False Sharing:-
+	->In a machine, cache can hold 8 long means 64 bytes ,when a visible variable is modified in any cache than all the line in marked "dirty" for the 
+		other caches.than all other thread read the variable from main memory not from relevant cache memory.We can resolve this issue using variable padding
+		technique.
+
+-->It prefered to use own defined key for synchronization.
+	->Because sometime default libirary function are labeled as synchronized due to that when we call that function from our defined function 
+		it will lead to Reentarant lock which means a thread asks for key which is holding by itself.
+
+-->we can also use synchronnized block inside synchronized method also by using different lock object.
+
+-->synchronized keyword provide atomicity where volatile provide visibility.
+	->synchronize is more strict than to vilatile.
+	->synchronized provide atomicity on read/write operation where volatile provide atomicity on write operation and provide parrell read.    
+
+-->Enum class 
+	->enum may implement many interfaces but cannot extend any class because it internally extends Enum class.

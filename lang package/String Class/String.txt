@@ -1,0 +1,96 @@
+										
+										java.lang.String 
+										----------------
+-->String objects are immutable.
+-->We can not make any change in String object.But if you want to make change in String object then it will create new String object.
+-->StringBuffer object are mutable.We can preform any change in existing object.
+--> Sting s = new String("durga");	|	StringBuffer sb = new StringBuffer("durga");
+    s.concat("Software");		|	sb.append("Software");
+    System.out.println(s);		|      	System.out.println(sb);
+					|
+    output :- durga			|	output :- durgaSoftware
+ 
+-->== operator is alway is meant for adreess compatrision.
+-->Object.equals() method is meant for adreess comparision.
+-->In lang.String equals() method is overridden for content comparision.
+-->In lang.Stringbuffer equals() method is not overridden.
+-->String s = new String("durga");
+	In above statement, two object will be created one in heap area and one in SCP(String Constant pool).Object s is pointing to heap area object.
+-->String s = "durga"
+	In above statement, one object will be created  in SCP(String Constant pool).object s pointing to SCP object.
+-->Object creation in SCP area is optional.First of JVM will check for object with same content in SCP area , if it is then it will point to that othrewisw it will 
+   create new.
+-->garbage collector is not allowed to destroy an object from SCP.
+-->All the objects from SCP will be destroyed when JVM shut down.
+-->thre wiil be an on=bject with same content in heap area.
+-->For every string constant one object will be placed in SCP area.
+-->Due to runtime operation if it required to create object so that object will be placed in heap area.
+-->String s5 = "you cannot"+"change me!"
+	This operation is perform at compile time only beause both arguments are constant.
+-->String S7 = s6 + "change me!";
+	This operation is perform at runtime because one of the argument is not constant.
+-->Final String s8 = "you cnanot";
+   String s9 = s8 + "change me!";
+	This operation is perform at runtime because both arguments are constants.
+
+
+										Interning of String Object
+										-------------------------
+
+-->We can use intern() method to get corresponding SCp reference by using heap object reference or by using heap object reference if we want to get corresponding 
+   SCP object reference then we should go for intern() method.
+-->If the corresponding SCP object is not available then intern() method is going to create a object in SCP same as heap area.
+
+
+-->In addition to String class, All wraper class object are immutable in java.
+
+
+-->How to create our own immutable class with example.
+	->once we create an object we can not perform any changes in that object.If we are tring to perform any change and if there is change in content then with 
+          those changes new object will be created, if there is no change then existing object will be used.  
+	->We can create our own immutable class.
+	->All immtable class should be declare final to avoid inheritance.
+	->To create immutable class, we have to implement each and every method in that class such way that they not allowed any change in existin object, if there is 
+	  change in existinng object then create a new object.
+
+-->What is difference between final and Immutable?
+	->Final means you can not re-assign the entity which is declare as final.but you change add something in it.
+	->Final applicable for varible but not for object where as immutablity is applicable for object but not for varibles.
+	->By declaring as final we want get any immuablity nature even through reference variable is final we can type of change in corresponding change in that 
+	  object,but we can not perforn re-assignment for that varible.
+	->hence final and immutable both are difference concept. 
+																																
+
+										Constructor Of String Class
+										---------------------------
+
+-->1) String s = new String();
+   2) String s = new Strinng(String str);
+   3) String s = new String(StringBuffer sb);
+   4) String s = new String(char[] ch);
+   5) String s = new String(byte[] b);   
+   	
+
+										Impportance method of String Class
+										----------------------------------
+
+-->public char charAt(int index);
+	->return charcter at specifing location.
+-->public String concat(String str); or s = s + "abc"; or s += "abc";
+-->public boolean equalsIngnoreCase(String s);
+-->public boolean equals(Object s);
+-->public String substrinng(int begin);
+-->public String substrinng(int begin,int end);
+-->public String length();
+-->public String repllace(char old_char, char new_char);
+-->public String toLowerCase();
+-->public String toUpperCase();
+-->public String trim();
+	->To remove blank space present at begining and at end of the string.
+-->public int indexOf(char ch);
+-->public int lastIndexOf(char ch);
+
+
+-->Because of run time operation if there is change in content with those changes a new object will be created on the heap area,If there is no change in content 
+   then existinng object will be reused and new object would not be created. 
+-->Whether the object present in heap or SCp the rule is same.

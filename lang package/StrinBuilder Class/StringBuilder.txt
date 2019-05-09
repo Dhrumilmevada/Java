@@ -1,0 +1,7 @@
+										
+										java.lang.StringBuilder
+										-----------------------
+
+-->StringBuilder is same as StringBuffer but it is not thread-safe.
+-->Each and every method in StringBuilder is not declared as synchronized.
+-->it is quicker compare to StringBuffer.  

@@ -1,0 +1,25 @@
+
+										Collection
+										----------
+
+-->Collection is storage of something in one entity.
+-->Collection is container which cotain 0 or more element.
+-->There is diffirent types of collections in java.Array is one the collection type
+-->In Array we can not add item into it dynamically or resize it.Once Array size will be declare we can change it.That's main problem.
+-->Collection other then the Array provide some features and constrain so that so we can organize data very well.
+-->java supported with pre-defined collection classes.so we dont need to impliment.we need to use them.
+-->collection data structure are diverse by:-
+	->Order:Lists
+	->Unqueness:Sets
+	->Pairs:map
+
+
+										Defining and iterating of collection
+										------------------------------------
+
+-->Using foreach loop we can only iterate thougth collection but using iterator we can iterate and modify collection simuntenouslly.
+ 
+
+									
+										List type collection
+										--------------------

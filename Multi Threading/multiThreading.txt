@@ -1,0 +1,133 @@
+							INTRODUCTION
+
+--> Multi Tasking
+	1)Process based :- Excecute sereval task at same time where is task is seperate task.there are not dependant on each other.
+				Works at Operating system.
+	2)Thread based :- Execute Serrval task at a same time from one program which are indepenent from each other.
+				Works at program level.
+
+							CREATING A THREAD
+
+--> What is thread?
+	Thread is a seperate flow of excution.
+-->Way of defining Thread
+	1) By extending Thread class
+	2) By implementing Runnable class
+-->Difference between Thread.run() and Thread.start()
+	-->using Thread.run() it is a normal method call ,it will not create new thread.
+	-->using Thread.start() it will crete nwe thread.
+-->run method can be overloded also start method can be overloaded 
+-->start always accept the run method without an argument.
+-->If you override run method then by invoking start method we get empty output.
+-->You can override start method but it will not create new thread ,it perform that when you call Thread's start method from	
+	overridden start method. 
+-->Runnable define in java.lang package and it contain only run() method.
+
+							THREAD PRIORITY
+
+-->Default priority of main thread is 5 but for other thread priority is inherited from parent to child.
+
+
+							YIELD() ,SLEEP() AND JION() METHOD
+
+-->We can prevent thread exceution by usig yield() ,jion() and sleep() method.
+-->yeild() method cause to pause the thread and give the chance other to execute of same priority.if there is no other 
+	thread than same thread continue.
+-->Using join() method you can force to one thread to wait untill some other complete its execution.
+-->Join() method will be called by the thread who has to wait. That Thread have to call join() method using the object of thread
+	for which it is going to wait.
+-->Join() method with argument is wait for the perticuar time after that it will start its excecution.
+-->Child thread can also stop the execution of parent thread.
+-->if child thread and parent thread both call join() method for each other than deadlock occurs.
+-->If thread calls join() method on itself it is something like deadlock.
+-->Thread can interrupt sleeping thread or waiting thread by using interrupt() mathod which is declare in Thread class.
+-->interrupt() method can interupt the thread which is in waiting or sleeping state.
+-->If thread is never going in sleeping or waiting thread than interrupt() method is going to fail.
+
+
+							SYNCHRONIZATION
+							
+	SYNCHRONIZE METHOD
+	
+-->Synchronized is the modifier applicable for block and method.
+-->If multiple thread are try to operate simuntenously on same java object than there may be a chance of data inconsistency problem.
+-->To overcome this problem we should go for synchronize method or block.it will allowed only one thread to run that method or 
+	block at a one point of time.
+-->it solve the data inconsistency problem ,it will not allowed to simentenous execution of thread.
+-->JVM provide only one lock mechanism for each object.
+	i.e :- if any one clas has a two synchronize method and one normal method.
+		there are four different object(thread) of one class.
+			first object call the synchronize method-1 and it is starts its execution.
+			second object call the synchronize method-1 and it has to wait until first thread come out.
+			second object call the synchronize method-2 and it has to wait until thread come out.
+ 			fourth object call the normal method and it immedeately start its execution.
+--> If multiple thread is operaring on same object than synchronization method works, but if multiple thread is operating on multiple 
+	object than synchronization method does not work.
+-->static synchronization method means class level locked method.
+-->Only synchronized method means object level locked method.
+-->two static synchronized or normal synchronized method within one class can not by invoked by using same object.
+-->it is a meaning less to use synchronized for overriden run() method beacause each time it willbe called by different object.
+
+
+	SYNCHRONIZE BLOCK
+
+-->If very few code is required synchronization then we cannot declare that method as a synchronization, we can enclosed those lines   
+	in synchronization block.
+-->synchronized block reduce the waiting time of thread and improve the performance.
+-->Three types of synchroized block 
+	i)to get lock of current object i.e. synchronized(this){.....}
+	ii)to get lock of perticular object b.  i.e. synchronized(b){........}
+	iii)to get class level lock consider  display is class 	i.e synchronized(display.class){......}
+-->Lock concept applicable for object and class type but not for premitive type like int,float.
+-->Statement present in synchronized method or block is called as synchronized statement.
+
+
+						INTER THREAD COMMUNICATION
+
+-->Inter thread commmunication is perform by using wait(), notify(), notifyAll().
+-->wait() method is invoked by thread which is expecting upadation.
+-->notify() and notifYAll() methos are invoked by thread which is responsible to perform upadation.
+-->Above mention three methods are define in Object class because thread can call these method for any class of java.
+-->To call wait(), notify(), notifyAll() methods on any object thread should be owner of that object that means thread sholud have 
+	a lock of that object means these methods from synchronized method or block.
+-->We can use notify() method to give notification to only one thread and remaining thread have to wait and which thread is 
+	going to notify is depend on JVM.
+-->We can use notifyAll() method to give the notifiaction for all waiting thread of a perticular object even through multiple notify 
+	but execution wiil be performed one by one because thread required lock which is available only one for a one object.
+
+
+							DEADLOCK
+
+-->Deadlock is lock without key.
+-->If two thread are waiting for eachother it called as deadlock.
+-->reason to rise a deadlock is a synchronize keyword.
+-->There is not available deadlock technic to resolve it but there is a prevention technic.
+-->whare one thread has to wait for long time after that it will goes for execution it called as starvation.
+
+
+							DAEMON THREAD
+
+
+-->Thread which are executing in background are called Daemon thread. Ex. Grarbage Collector.
+-->At starting daemon thread works with low priority, when our need to perform daemon thread get high it can run with high 
+	priority also.
+-->To check thread is daemon or not we have isDaemon():boolean method.
+-->To make the thread as daemon thread setDaemon(boolean b):void method. we have to set thread as daemon before starting the
+ 	thread,else we will get IllegelThreadState Exception.
+-->for behaviour of thread in context of daemon is inherited from parent to child thread same as thread priority.
+-->We cannot change daemon nature of main method.
+-->after all non-daemon thread are completed then daemon thread are automatically destroyed.
+
+
+-->java multithreading concept is implemented by using two models
+	i) Green Thread Model
+	ii)Native OS Model
+-->The thread which is managed by JVM without taking OS support is called Green Thread Model.Sun Solaries operatinn system 	
+	provides support for Green Thread Model.
+-->The Thread which is mange by JVM with the help of underlyinng OS is called Native OS Model.All windows badsed operating 	
+	system provide support for native os model.
+
+
+-->Thread.stop() is used to stop the execution of thread and it will be goes into a dead state.
+-->We can suspend a thread by using suspend() method of thread class and thread will be temporarly stop.
+-->We can resume a suspended thread by using resume() method.then that thread continue its execution.

@@ -1,0 +1,22 @@
+										Serialization
+										-------------
+->It ia procees of converting java supported from to file/network supported form.
+->Deserlization is procees of reading from file/network supported form to java supported from.
+->Serlizable interface is interface which has no any method that why it called as marker interface.
+->Methods which are called by JVM those methods are known as callback method.
+->If Object class implements Serialized interface then no any class need to implement serializable, 
+	but object doesn't implement serializable.
+->All servlet class in java doesn't need to implement serializable ,because their parent class implements serializable.
+->Work done in instance control flow :-
+	1)Identificationn of instance variable.
+	2)Execution of instance variable assignment and instance block.
+	3)Execution of constructor.
+->To serialize child class, there is not require to implements serialized in parent claas, if this is so then we cannot 
+	serialize any class because object class which is parent of all class does not implements serialized interface.
+->Every non-serialized parent class must have a no argument constructor.
+
+
+										Externalization
+										---------------
+->It contain two method 1)writeExternal() 2)readExternal().
+->It is a child interface of Serilization.     

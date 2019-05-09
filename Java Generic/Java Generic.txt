@@ -1,0 +1,16 @@
+
+--> The main objective of generics is to provide type safety and resolve type casting problem.
+
+--> Arrays are type safe, We can give garantee for the type element inside array.
+	if our program requiredmen is only string type then we can chosse string array. If we add any other type of value than
+	compiler give error.
+
+-->But coolections are not type safe. so that can not give garentee for type of element present in collection. In that case,
+	while reteiving element from collection if there is a element which does not of expected type that it will give run time
+	error.
+
+-->Type casting :-
+	--> While retriving element from collection it is required to perform type casting because element can be of any type.
+
+-->For storing only string type data in arraylist we can use generic i.e: ArrayList<String> al = new ArrayList<string>
+	if we try to store any other type data rhan it will give compile time error and type casting is not required while reading data.	

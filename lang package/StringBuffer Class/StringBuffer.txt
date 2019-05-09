@@ -1,0 +1,39 @@
+
+										java.lang.StringBuffer
+										----------------------
+
+-->When need of changing fequently String object then it is recommened to use StringBuffer instad of String.
+-->When we change StringBuffer then it will change same object again and again.
+-->Intial capacity of StringBuffer is 16.then it will increse in proposition of ((capacity+1)*2).
+
+
+		 								Constructor 
+										-----------
+-->1)StringBuffer sb = new Stringbuffer();
+   2)StringBuffer sb = new StringBuffer(int capacity);
+   3)StringBuffer sb = new StringBuffer(String str);
+   
+
+										Importance methods in Stringbuffer
+										-----------------------------------
+
+-->public int lenth();
+-->public int capacity()
+-->public char charAt(int index);
+-->public void setCharAt(int index,char ch);
+-->public StringBuffer append(string s);
+-->public StringBuffer append(double d);
+-->public StringBuffer append(char ch);
+-->public StringBuffer append(long l);
+-->public StringBuffer append(int i);
+-->public StringBuffer append(boolean b);
+-->public StringBuffer insert(int index,String s/int i/char ch);
+-->public StringBufffer delete(int start,int end);
+-->public StringBufffer deleteCharAt(int index);
+-->public StringBuffer reverse();
+-->public void setlength(int l);
+-->public void ensureCapacity(int c);
+-->public void trimToSize();
+
+-->Every method in StrinBuffer.class is declared as synchronized.So that it is thread-safe.
+ 

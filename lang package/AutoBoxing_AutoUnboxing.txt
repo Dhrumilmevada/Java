@@ -1,0 +1,56 @@
+									
+									AutoBoxing-AutoUnboxing
+									-----------------------
+-->Automatically convert primitive to wrapper is called as Autoboxing.
+-->It is done by Compiler.
+-->Integer i =10 == integer i = Integer.valueOf(10);
+	->Comiler converting int to Interger autometically using autoboxing.
+-->AutoUnboxing is autometic conversion of wrapper object to primtive by compiler is called as Auto-unboxing.
+-->integer I = new integer(10);
+   int i = I	== int i = I.intValue();
+   ->Compiler autometically convert wrapper object into primitive.
+-->This concept valid in 1.5 and above version.
+-->On null reference if you are tying to perfrom autounboxing we will get runtime exception saying NullPointerException.
+-->All wrapper objects are immutable that is once we create wrapper class object we can not perform any change in that object.If we are tying to perform any 
+   changes with those changes new object will be created.
+-->Internally to provide support for autoboxing  buffer of wrapper object will be created at the time of wrapper class loading.
+-->By Autoboxing if the object is requied to create first JVM will check this object is already in buffer or not if it is already present in buffer then existing 
+   buffer object will be used, if it is not already avilable in the buffer then JVM will create new object.
+-->But buffer concept is available only in the following range:-
+	Byte -> always
+	Short -> -128 to 127
+	Integer -> -128 to 127
+	Long -> -128 to 127
+	Charactor -> 0 to 127
+	Boolean -> always
+-->Accept this range in remaining cases a new object will be created.
+-->internally Autoboxing cpncept is implemented by using value of method hence buffering concept is applicable for valueof() method also.
+
+
+								Overloading with respect to Autoboxing,widening, & var-arg methods
+								------------------------------------------------------------------
+				
+-->widening is the process of converting low wrappper class to large wrapper class like Integer to Long,character to Integer
+-->var-arg method means methods can have any number of arguments of specified data type like
+	void m1(int... x)=>It can have no arguments to any number of arguments.
+-->case-1 :- Autoboxing vs widening
+	->wiening dominate autoboxing.
+-->case-2 :- widening vs var-arg method
+	->widening doninate var-arg method.
+-->case-3 :- Autoboxing vs var-arg method
+	-> autoboxing dominate the var-arg method
+-->var-arg method is the least priority among the three Which is excatly same as default case in switch case.
+-->Order by priority:-
+	1)Widening
+	2)Autoboxing
+	3)var-arg method
+-->In java widening followed by autoboxing is not allowed in java but autoboxing followed widening is allowed.
+-->So that we can not convert int to Long.but long to object is possible
+-->possible assignment :-
+	->int i=10; 	 
+	->integer I=10; (Autoboxing)
+	->Long I=10L; (Autoboxing)
+	->long i=10; (widerning)
+	->Object o = 10; (Autoboxing -> widering)
+	->double d = 10; (Widerning)
+	->Number n=10; (Autoboxing -> Widerning)

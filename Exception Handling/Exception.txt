@@ -1,0 +1,94 @@
+						WHAT IS EXCEPTION?
+
+-->unexpected unwanted that distrupt the normal flow of program it is called as exceptinon.
+-->main objective of exception handling is to gracefull termination of program.
+-->Exceception means does not means to repair exception we have to provide the alternative way to rest of program execute normally.
+
+						RUNTIME STACK MECHANISM
+
+-->Each thread create runtime stack which stores the task that perform by that perticular thread and entry in stack is 
+	called as Activation record.
+	
+						DEFAULT EXCEPTION HANDLING
+
+-->Anywhere exception arise than it is a responsible for handle that exception ,if it is not have exception handling 
+	mechanism than its caller is responsible for handling the exception if no one have exception handling mechanism 
+	including main method than it will handle by default exception handler.
+	
+
+						EXCEPTION HIARACHY  
+
+-->Throwable is root class of exception hiarachy. It has a two subclass i) Exception ii) error. 
+-->Exception are cause by program and they are recoverable.
+-->Errors are not cause by program and they are not recoverable.
+
+						UNCHACKED AND CHACKED EXCEPTION
+
+-->Exceptions which are checked by compiler at compile time for smooth excution of program is known as chacked exception.
+	they are excepted to be occured but sometime they may be not going to occure.
+	i.e throws keyword specified exception are chacked exception.
+-->Exception which are not checked by compiler at compile time it is known as unchecked exception.
+-->Whether Exception is checked or unchecked it will be occured at runtime only.
+-->Runtime Exception and its child claases and error and its child classes are unchecked.rest of are checked exception.
+-->Exception is fully checked if and only if it itself and its all subclasses are cheched. i.e ioException 
+-->If someone's any child claases are unchecked then it is a partial checked exception.  i.e Exception
+-->Partially checked exception are Throwable and Exception.
+
+
+						TRY CATCH FINALLY BLOCK
+
+-->In try block we have to take only risky code because remaining code after the exception occur will not going to execute.
+-->There are three method to print exception information 1) using printStackTrace() method	e.printStackTrace();
+							 2) using toString() method	System.out.println(e.toString()); or System.out.println(e);
+							 3) usinng getMessage() method	System.out.println(e.getMessage());
+-->while writing more than one catch block for one try block then order of catch block should be subclass to superclass of any 
+	exception class hierachy from top to bottom.   
+-->finally used to write clean up code.it will execute whether exception occurs or not.
+-->fnally is related to Exception handling.
+-->finalize is related to objects.
+
+						THROW KEYWORD
+
+-->Its ia used to create new exception object and handover it to JVM.
+-->it will used for user define exception and customize exception.
+-->After throw statement we are not able to write any statement directly else we get compile time error.
+-->throw can be used for only Throwable and its child class type.
+
+	
+						THROWS KEYWORD
+
+-->throws can only throw checked exception.
+-->Exception that are include in throws caulse are handle using try-catch block or by throws keyword. 
+-->By using throws we give a responsibility to handle the exception by caller which is may be any method or JVM itself.
+-->We can not throws keyword for classes.
+-->Throws an be used for only throwable class and child class type.
+-->if we are going to throw checked exception than we have to handle by try-catch block or throws keyword.
+-->we can throw unchecked exception without handling it.
+-->we can not write catch block for fully checked exception if try block is not going to create such type of exception.
+
+
+
+						CUSTOMIZE OR USER DEFINE EXCEPTION
+
+-->Throw is best suitable for user define or customize exception.
+-->While defining customize exception as unchecked so we have to extends RuntimeException.
+-->There are two type of Exception i)JVM Exception
+				   ii)Programmer or API developer Exception
+-->Exception which is arised by JVM is JVM Exception i.e ArithmeticException, NullpointerException
+-->Exception which is arised by programmer or API developer are known as programmer or API developer Exception.
+
+						TRY WITH RESOURCES
+
+--> try(Resoures){  .... }
+-->thise resources are implements java.lang.Autoclosable interface than that resources are close automatically close.
+-->All type of java resources are already implemented by java.lang.Autoclosable interface.
+-->All resources are declare in try with resource are implicitlly final.
+
+						MULTY CATCH BLOCK
+
+-->if multiple catch blocks have a same handling code than we can use multy catch block.
+-->catch(ArithmeticException | NullPointerException e) { System.out.println(e);}
+
+
+-->Exception propogation -> if any method not handling the exception than it will propogated to its caller to handle it .it
+				is known as exception propogation. 

@@ -1,0 +1,9 @@
+
+										java.lang.Void
+										--------------
+
+-->It is a final class and direct child class of Object.
+-->It does not contain any method and it contain only one varible void.Type
+-->In general, we can use void class in reflection to check whether the method return type is void not.
+-->if(getMethod("m1").getReturnType()==Void.Type) 
+-->Void is the class representation of void keyword in java.

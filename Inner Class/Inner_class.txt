@@ -1,0 +1,103 @@
+							INNER CLASS	
+
+1) Without outer class object we can not create object of inner class.
+2)relanship between outer class and inner class is Has a relationship-we  known as agregation or compotision.
+3) types of ineer class * regular inner classes
+			* static nested class
+			* Method local inner class
+			* anonymous inner class  
+-->Regular Inner class :- named class directly define into class without using static modifier.
+-->In inner class we cann't declare any static method or variable.
+-->Inner class is depence on the object(instance) of a class.
+	So,that it can not declare any static context inside it and its object cannot be created inside the static method without
+	using outer class object.it can declare inside instance method of outer class without using outer class object.
+--> inner class can have modifier like public ,default, final ,abstract ,private,protected,static,strictfop.
+-->for outer class public ,default, final ,abstract ,strictfop modifiers are allowed.
+
+
+							METHOD LOCAL INNER CLASS
+-->declate inside the method.
+-->Nested methods are not allowed in java.
+-->need to fullfilled nested method reqiuerment using class inside function.
+-->most rarely use type of inner class.
+-->from methos local inner class we cannot access local variable of that method ,it is possible when local variable declare as final.
+	1)because after local variable goes out of scope but still there object is exist which cannot able to reffered to that variable
+	using final compiler simplly put the value at its varible location.	 
+	2)if innner class can access local variable of method then it may alter its value ,this updated value can access only using 
+	inner class object  and outside the claas is not change so in same scope one variable has two value. value depence on 
+	from where it aceess.
+-->Method  local inner class can be specifing with final ,abstract , and srictfop.
+
+	  						ANONYMOUS INNER CLASS 
+-->class without name
+-->only for one time use.
+--> types of anonymous class that 	1) by extendind class
+				2)by implimenting interface
+				3) define inside arguments
+-->Runnable r= new Runnable{   }; Syntax for anonymous class 
+-->Runnable is a intrface ,we cannot create an object of interface ,here object is an object of class who implement the Runnable 
+	interface.
+--> EX apply to run method in thread class while extending. 
+-->it can implement only one interface or extand one class  but normal class can implement  any number of interface and extand
+	 only one class.
+-->  in Anonymous classes we can not write any constructor explicitly because it has no name.
+-->used in GUI based applicaton. 
+							STATIC NESTED CLASSES			 
+
+-->we can create its object without creating outer class object that why is is called as nested class.
+-->we can declare static methods and variables inside the static nested class.
+-->we can access only static variable and of uter class. non-static methods and variables are access by creating object of outer class.
+					
+					VARIOUS COMBINATION OF NESTED CLASS AND INTAFACE
+		1)class inside class
+		2)class inside interface
+		3)interface inside class
+		4)interface inside interface
+
+3) Interface inside class :- if we required multiple implementatin of intraface in one class then we can declare intraface inside 
+	the class. they are implicitly declared as static.
+	i.e :-	class outer{
+			
+			interface iface{
+			.....
+			......
+			}
+			
+			class inner1 implements iface{
+			.......	
+			..........
+			}
+			
+			class inner implements iface{
+			......
+			.......
+			} 
+		}
+
+4) interaface inside interface :- They are implicitly declare as static and public.
+ 
+		interface map{
+			interface entry{
+			}
+		}
+--> inner intrafec is always public and static.
+--> i.e.     interface outer {
+		void m1();	
+		interface inner{
+			void m2();
+		}		
+	}
+	class demo1 implements outer{
+		void m1(){
+			....
+		}
+	}
+	class demo2 implements outer.inner{
+		void m2(){
+			.....
+		}
+	}
+
+2) class inside interface :- if class is closely associated with intraface then we can declare class inside intraface. 
+	they are implicitly declare as static and public.			
+--> it is provide default implimentation means implent interface by inner class of that interface.   

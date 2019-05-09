@@ -1,0 +1,67 @@
+										
+										java.lang.Wrapper
+										-----------------
+
+-->The main objective of wrapper classes are 
+	1)To wrap primitive into object form.So that primitive become object.
+	2)To define several utility method which are required for the primitives.
+
+
+										Constructors
+										------------
+
+-->1)Integer i = new Integer(int i);
+   2)Integer i = new Integer(String i);
+-->Alomost all wrapper classes two constructor one can take corresponding premitive as argument and other can take string as argument.
+-->Float.class contain three constructor with float, string, double argument. 
+-->Charactor.class contain just one constructor which having an argument type of charactor.
+-->For Boolean.class's constructor, If we are passing string as argument then case and content both are not important.If the content is case insensitive string of "true" then it is treated as true otherwise it is trearted as false.
+-->In all wrapper classes Object.equals() methos is overridden for contain comparision.
+
+
+										Utility Methods
+										---------------
+-->ValueOf()
+	->We can use valueOf() method to create wrapper object.
+	->form:-1 =>public static Wrapper valueOf(String i);
+		->we can use valueOf() to create wrapper object for the given primitive or string.
+		->Every wrapper class except Charactor class every wrapper class contain static method valueof() to createwrapper for given string.
+	->form:-2 =>public static Wrapper valueOf(String i,int radix);;
+   		->This form is only applicable to Long,Byte,Short,Integer class.
+		->allowed range of radix is 2 to 36.
+	->form:-3 =>public static Wrapper valueof(primitive i);
+		->Every wrapper class contain static method named as valueof() to create wrapper object for the given primitive.
+	->To create Primitive/String wrapper we need valueOf() method.  
+-->xxxValues()
+	->We can use xxxValue() methos to get primitive for given wrapper object.
+	->Every number type wrapper class contain following six method to get primitive for the given wrapper object.
+		1)public byte byteValue();
+		2)public int  intValue();
+		3)public long longValue();
+		4)public short shortValue();
+		5)public float floatValue();
+		6)public double doubleValue();
+	->For charactor class, there is charValue() method to get primitive value.
+	->For Boolean class, there is BooleanValue() value to get primitive value.
+	->In total 38 xxxValue() in java.lang package.
+-->parseXxx()
+	->We can use parseXxx() method to convert string to primitive.
+	->Form 1 :- public static primitive parseXxx(String s);
+		->Every wrapper except charactor class contains the following parseXxx() method to find primitive for given string object.
+	->Form 2:- public static  primitive parseXxx(String s, int radix);
+		->Every integral type wrapper class contain parseXxx() method to convert specified radix string to primitive.
+		->allowed range of radix is 2 to 36.
+-->toString()
+	->We can use toString method to convert wrapper object or primitive to string.
+	->Form 1 :- public string toString();
+		->All Wrapper class override the method object.toString() method.
+		->every wrapper class contains wrapper object to string type.
+	->Form 2 :- public static String toString(primitive p);  
+		->every wrapper class including charactor class contains this toString() method to convert primitive to string.
+	->form 3 :-public static string toString(primitive p,int radix);
+		->allowed range of radix is 2 to 36.
+		->this type of toString() method is available in Interger.class and long.class
+	->Form 4 :-String s = Integer.ToBinaryString(i)
+		->this is available  for binary, octal, hexadecimal in Integer.class and Long.class
+
+-->All wrapper classes are final and immutable with string class.

@@ -1,0 +1,6 @@
+		
+										JRE vs JDK
+										----------
+-->JRE is requied to run java applicaton.End-user only required JRE.
+-->JDK provide tool to create java application.Developers normally reqiured the JDK.
+-->JDK installation includes JRE.
